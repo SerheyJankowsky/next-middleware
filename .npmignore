@@ -9,3 +9,6 @@ src
 
 # Ignore config files
 tsconfig.json
+
+# Ignore .github
+.github
