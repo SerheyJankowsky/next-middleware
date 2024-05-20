@@ -17,7 +17,6 @@ type MiddlewareConfig = {
   defaultReturn?: MiddlewareFunction;
   locale?: boolean;
 };
-a;
 
 export class MiddlewareBuilder {
   private config: MiddlewareConfig;
