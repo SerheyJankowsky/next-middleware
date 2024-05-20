@@ -116,7 +116,7 @@ export default function middleware(req: NextRequest) {
 ### Path Pattern Examples
 
 - "\*": Matches any path.
-- "/api/\_": Matches any path under /api/ (e.g., /api/user, /api/posts).
+- "/dashboard/\*": Matches any path under /dashboard/ (e.g., /dashboard/user, /dashboard/posts).
 - "/": Matches the root path.
 
 ## License
