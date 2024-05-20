@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SerheyJankowsky/next-middleware"
+    "url": "git+github:SerheyJankowsky/next-middleware"
   },
   "bugs": {
     "url": "https://github.com/SerheyJankowsky/next-middleware/issues"
