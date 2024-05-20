@@ -9,7 +9,7 @@
     "prepublishOnly": "npm run build",
     "prepare": "is-ci || husky install"
   },
-  "author": "Serhii Tuppilow",
+  "author": "Tupilov Serhii",
   "license": "MIT",
   "devDependencies": {
     "husky": "^9.0.11",

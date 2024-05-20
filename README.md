@@ -7,6 +7,7 @@ A middleware builder for Next.js that simplifies the creation and management of 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [License](#license)
 
 ## Installation
 
@@ -17,6 +18,8 @@ npm install next-middleware
 ```
 
 ## Usage
+
+> Important: In the Path Matching section, I've added an explanation to clarify that middleware is called from right to left when multiple path patterns match
 
 ```ts
 import {
@@ -32,7 +35,6 @@ const myMiddleware = async (
 ) => {
   // Your middleware logic here
   console.log("Request received");
-  await next();
 };
 
 const builder = new MiddlewareBuilder({
@@ -46,6 +48,18 @@ export default function middleware(req: NextRequest) {
   return builder.middlewareStart(req);
 }
 ```
+
+### Request (req: NextRequest)
+
+The req parameter represents the incoming HTTP request object. It contains information about the client's request, such as the URL, HTTP method, headers, query parameters, and request body. In your case, you're using NextRequest, which likely extends the standard Node.js http.IncomingMessage class with additional properties and methods provided by Next.js.
+
+### Response (res: typeof NextResponse)
+
+The res parameter represents the HTTP response object that will be sent back to the client. It allows you to set response headers, status codes, and send data back to the client. In your case, you're using typeof NextResponse, indicating that res should be an instance of the NextResponse class provided by Next.js. This class likely extends the standard Node.js http.ServerResponse class with additional Next.js-specific functionality.
+
+### Stop Function (next: () => Promise<void>)
+
+The next parameter is a function that, when called, stop call chain middleware
 
 ## Configuration
 
@@ -72,7 +86,6 @@ const myMiddleware1 = async (
 ) => {
   // Middleware logic
   console.log("Middleware 1 executed");
-  await next();
 };
 
 const myMiddleware2 = async (
@@ -82,7 +95,6 @@ const myMiddleware2 = async (
 ) => {
   // Middleware logic
   console.log("Middleware 2 executed");
-  await next();
 };
 
 const builder = new MiddlewareBuilder({
@@ -103,6 +115,10 @@ export default function middleware(req: NextRequest) {
 
 ### Path Pattern Examples
 
-- "\_": Matches any path.
+- "\*": Matches any path.
 - "/api/\_": Matches any path under /api/ (e.g., /api/user, /api/posts).
 - "/": Matches the root path.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
