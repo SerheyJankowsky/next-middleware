@@ -1,4 +1,13 @@
-# 1.1.0 (2024-05-20)
+## [1.1.2](http://serheyjankowsky/next-middleware/compare/v1.1.0...v1.1.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* :mag: add keywords ([8569ba3](http://serheyjankowsky/next-middleware/commits/8569ba38f24873489d2f9cc22c5dd0bebed1cc0d))
+
+
+
+# [1.1.0](http://serheyjankowsky/next-middleware/compare/acd6140e2deedce61ceef4c3d879d790f287c854...v1.1.0) (2024-05-20)
 
 
 ### Bug Fixes
