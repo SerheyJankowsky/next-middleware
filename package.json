@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/your-repo-name.git"
+    "url": "https://github.com/SerheyJankowsky/next-middleware"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/your-repo-name/issues"
+    "url": "https://github.com/SerheyJankowsky/next-middleware/issues"
   },
-  "homepage": "https://github.com/yourusername/your-repo-name#readme"
+  "homepage": "https://github.com/SerheyJankowsky/next-middleware#readme"
 }
