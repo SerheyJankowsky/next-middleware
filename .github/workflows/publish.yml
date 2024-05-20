@@ -1,4 +1,4 @@
-name: CI
+name: Publish to npm
 
 on:
   push:
@@ -19,13 +19,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20"
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
 
       - name: Run build
         run: npm run build
+
       - name: Publish package
         run: npm publish
         env:
