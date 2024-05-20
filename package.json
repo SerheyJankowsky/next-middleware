@@ -9,6 +9,9 @@
     "prepublishOnly": "npm run build",
     "prepare": "is-ci || husky install"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "author": "Tupilov Serhii",
   "license": "MIT",
   "devDependencies": {
