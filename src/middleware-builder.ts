@@ -50,6 +50,7 @@ export class MiddlewareBuilder {
       const [pathPattern, middlewares] = middleware[i] as any;
       const regex = this.createRegExp(pathPattern);
       let path: any = req.nextUrl.pathname;
+
       if (this.config.locale) {
         path = path.split("/");
         delete path[0];
@@ -57,6 +58,7 @@ export class MiddlewareBuilder {
         path = path.filter((p: string | undefined) => p);
         path = path.join("/");
       }
+
       if (regex.test(path)) {
         for (const current of middlewares.reverse()) {
           let stopChain = false;
