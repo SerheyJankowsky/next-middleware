@@ -1,21 +1,26 @@
-name: Publish to NPM
+name: Releases
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+
 jobs:
-  build:
+  changelog:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3.7.1
         with:
-          node-version: "20"
-          registry-url: "https://registry.npmjs.org"
-      - name: Install dependencies and build 🔧
-        run: npm ci
-      - name: Publish package on NPM 📦
-        run: npm publish
+          github-token: ${{ secrets.GT_TOKEN }}
+          version-file: "./package.json,./package-lock.json"
+      - name: create release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GT_TOKEN }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
