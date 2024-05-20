@@ -1,0 +1,11 @@
+# Ignore node_modules
+node_modules
+
+# Ignore build directories
+dist
+
+# Ignore source files
+src
+
+# Ignore config files
+tsconfig.json
