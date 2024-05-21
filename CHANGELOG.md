@@ -1,3 +1,12 @@
+## [1.1.3](http://serheyjankowsky/next-middleware/compare/v1.1.2...v1.1.3) (2024-05-21)
+
+
+### Bug Fixes
+
+* :rotating_light: fix ts compile file ([af79c08](http://serheyjankowsky/next-middleware/commits/af79c08b7c2cca4c2b6650c3a912f1ab392e9a9e))
+
+
+
 ## [1.1.2](http://serheyjankowsky/next-middleware/compare/v1.1.0...v1.1.2) (2024-05-20)
 
 
