@@ -13,6 +13,7 @@ export class MiddlewareBuilder {
 
   public async middlewareStart(req: Req) {
     const { defaultReturn } = this.config;
+
     try {
       const result = await this.callMiddleware(req);
       if (result instanceof NextResponse) {
