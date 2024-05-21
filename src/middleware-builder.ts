@@ -1,22 +1,5 @@
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-
-export type NextHandler = () => Promise<void>;
-
-export type Req = NextRequest;
-export type Res = typeof NextResponse;
-
-type MiddlewareFunction = (
-  req: NextRequest,
-  res: typeof NextResponse,
-  next: () => Promise<void>
-) => Promise<NextResponse<unknown> | void> | NextResponse<unknown> | void;
-
-type MiddlewareConfig = {
-  middleware: [string, MiddlewareFunction[]][];
-  defaultReturn?: MiddlewareFunction;
-  locale?: boolean;
-};
+import { MiddlewareConfig, Req } from "./types";
 
 export class MiddlewareBuilder {
   private config: MiddlewareConfig;

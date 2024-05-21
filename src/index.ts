@@ -1,1 +1,2 @@
-export { MiddlewareBuilder } from "./middleware-builder";
+export * from "./middleware-builder";
+export * from "./types";
