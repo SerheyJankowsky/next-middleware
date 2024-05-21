@@ -26,7 +26,7 @@ import {
   MiddlewareBuilder,
   NextRequest,
   NextResponse,
-} from "my-nextjs-package";
+} from "@serhiitupilow/next-middleware";
 
 const myMiddleware = async (
   req: NextRequest,
@@ -77,7 +77,7 @@ import {
   MiddlewareBuilder,
   NextRequest,
   NextResponse,
-} from "my-nextjs-package";
+} from "@serhiitupilow/next-middleware";
 
 const myMiddleware1 = async (
   req: NextRequest,
