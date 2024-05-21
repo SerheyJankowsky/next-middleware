@@ -17,3 +17,4 @@ export type MiddlewareConfig = {
   defaultReturn?: MiddlewareFunction;
   locale?: boolean;
 };
+export type TPageMiddleware<T> = (ctx?: T, next?: () => void) => Promise<void>;

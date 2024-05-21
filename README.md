@@ -1,4 +1,4 @@
-# My Next.js Middleware Package
+# Next.js Middleware Package
 
 A middleware builder for Next.js that simplifies the creation and management of middleware functions.
 
@@ -7,6 +7,7 @@ A middleware builder for Next.js that simplifies the creation and management of 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [withMiddleware](#withMiddleware)
 - [License](#license)
 
 ## Installation
@@ -119,6 +120,61 @@ export default function middleware(req: NextRequest) {
 - "/dashboard/\*": Matches any path under /dashboard/ (e.g., /dashboard/user, /dashboard/posts).
 - "/": Matches the root path.
 
+## withMiddleware HOC
+
+This package provides a higher-order component (HOC) that enables you to apply middleware functions to a Next.js page component. Middleware functions can be asynchronous and have the ability to modify a shared context object. The execution of middleware functions can be controlled using a `next` function, witch stop call next middleware. Function calls from left to right.
+
+### Usage
+
+Use the withMiddleware HOC with a Next.js page component
+
+```ts
+import { FC } from "react";
+import {
+  withMiddleware,
+  TPageMiddleware,
+} from "@serhiitupilow/next-middleware";
+
+type Context = {
+  user: {
+    name: string;
+    data: Array<any>;
+  };
+};
+
+// Sample middleware functions
+const middleware1: TPageMiddleware<Context> = async (ctx, next) => {
+  await new Promise(() => setTimeout({
+    ctx.user = "Vasa";
+  }, 1000));
+};
+
+const middleware2: TPageMiddleware<any> = async (ctx) => {
+  ctx.data = ["1", "2"];
+};
+
+// Next.js page component
+const MyPage: FC<any> = (props) => {
+  return (
+    <div>
+      <h1>My Page</h1>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
+    </div>
+  );
+};
+export default withMiddleware<Context>([middleware1, middleware2])(MyPage);
+```
+
+### Types
+
+```ts
+export type TPageMiddleware<T> = (ctx?: T, next?: () => void) => Promise<void>;
+```
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+```
+
+```

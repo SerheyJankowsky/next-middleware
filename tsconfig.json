@@ -21,8 +21,9 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "lib": ["ES2015", "DOM"]
+    "lib": ["ES2015", "DOM"],
+    "jsx": "react"
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
