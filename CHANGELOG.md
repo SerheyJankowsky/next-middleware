@@ -1,3 +1,12 @@
+## [1.1.4](http://serheyjankowsky/next-middleware/compare/v1.1.3...v1.1.4) (2024-05-21)
+
+
+### Bug Fixes
+
+* :rotating_light: New ts config ([33d05ea](http://serheyjankowsky/next-middleware/commits/33d05eaa9d7d5d01b8e91798279cefcf7d385a67))
+
+
+
 ## [1.1.3](http://serheyjankowsky/next-middleware/compare/v1.1.2...v1.1.3) (2024-05-21)
 
 
