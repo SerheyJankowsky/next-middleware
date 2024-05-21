@@ -1,3 +1,12 @@
+## [1.3.1](http://serheyjankowsky/next-middleware/compare/v1.3.0...v1.3.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* :speech_balloon: Update readme ([7448920](http://serheyjankowsky/next-middleware/commits/74489208eb66e51641010c51d3d9adaaca4008a4))
+
+
+
 # [1.3.0](http://serheyjankowsky/next-middleware/compare/v1.2.0...v1.3.0) (2024-05-21)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * :rotating_light: fix ts compile file ([af79c08](http://serheyjankowsky/next-middleware/commits/af79c08b7c2cca4c2b6650c3a912f1ab392e9a9e))
-
-
-
-## [1.1.2](http://serheyjankowsky/next-middleware/compare/v1.1.0...v1.1.2) (2024-05-20)
-
-
-### Bug Fixes
-
-* :mag: add keywords ([8569ba3](http://serheyjankowsky/next-middleware/commits/8569ba38f24873489d2f9cc22c5dd0bebed1cc0d))
 
 
 
