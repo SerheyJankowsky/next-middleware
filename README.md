@@ -15,7 +15,7 @@ A middleware builder for Next.js that simplifies the creation and management of 
 To install the package, run:
 
 ```sh
-npm install next-middleware
+npm i @serhiitupilow/next-middleware
 ```
 
 ## Usage
