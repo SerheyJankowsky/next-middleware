@@ -154,7 +154,7 @@ const middleware2: TPageMiddleware<any> = async (ctx) => {
 };
 
 // Next.js page component
-const MyPage: FC<any> = (props) => {
+const MyPage: FC<Context> = (props) => {
   return (
     <div>
       <h1>My Page</h1>
